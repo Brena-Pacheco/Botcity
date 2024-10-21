@@ -1,0 +1,11 @@
+Send Request 
+POST http://127.0.0.1:5000/usuario 
+Content-Type: application/json //
+{
+    "nome" : "Brena Pacheco",
+    "login": "brena",
+    "senha" : "444",
+    "email": "brenacidade@gmail.com"
+}
+GET http://127.0.0.1:5000/usuario
+Content-Type: application/json

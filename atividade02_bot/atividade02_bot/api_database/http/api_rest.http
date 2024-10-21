@@ -1,0 +1,144 @@
+// ---------------------------------------------
+// Testar todos os servico da api para usuario
+// ---------------------------------------------
+
+// Inserir usuario
+POST http://127.0.0.1:5000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Lua Pereira Goncalves",
+    "login": "Lua",
+    "senha": "444",
+    "email": "ket@gmail.com"
+}
+###
+
+// Alterar usuario
+PUT http://127.0.0.1:5000/usuario
+Content-Type: application/json
+
+{
+    "id": 6,
+    "nome": "Maria Pereira Goncalves",
+    "login": "maria",
+    "senha": "777",
+    "email": "msria@gmail.com"
+}
+###
+
+// Listar todos os usuários em ordem alfabética do nome
+GET http://127.0.0.1:5000/usuario 
+Content-Type: application/json
+###
+
+// Obter usuário pelo ID
+GET http://127.0.0.1:5000/usuario/6
+Content-Type: application/json
+###
+
+// Deletar usuário pelo ID
+DELETE http://127.0.0.1:5000/usuario/1
+Content-Type: application/json
+###
+
+// ---------------------------------------------
+// Testar todos os servico da api para produtos
+// ---------------------------------------------
+
+// Incluir produto - Açaí
+POST http://127.0.0.1:5000/produto
+Content-Type: application/json
+
+{
+  "descricao" : "Acai",
+  "unidade"   : "Litro",
+  "quantidade" : 10,
+  "preco_real" : 12.50,
+  "preco_dolar": 0.0
+}
+###
+
+// Incluir produto - Tucumã
+POST http://127.0.0.1:5000/produto
+Content-Type: application/json
+
+{
+  "descricao" : "Tucuma",
+  "unidade"   : "Kg",
+  "quantidade" : 30,
+  "preco_real" : 17.30,
+  "preco_dolar": 0.0
+}
+###
+
+// Incluir produto - Tapioca
+POST http://127.0.0.1:5000/produto
+Content-Type: application/json
+
+{
+  "descricao" : "Tapioca",
+  "unidade"   : "Unid",
+  "quantidade" : 5,
+  "preco_real" : 4.70,
+  "preco_dolar": 0.0
+}
+###
+
+// Alterar produto pelo id
+PUT http://127.0.0.1:5000/produto
+Content-Type: application/json
+
+
+{
+  "id": 2,
+  "descricao" : "Carne",
+  "unidade" : "Kg",
+  "quantidade" : 1,
+  "preco_real" : 30.50,
+  "preco_dolar": 150.0
+}
+
+
+###
+
+// Alterar o preco dolar do produto pelo id
+PUT http://127.0.0.1:5000/produto/preco_dolar
+Content-Type: application/json
+
+//{
+//  "id": 1,
+//  "preco_dolar": 350.0
+//}
+###
+
+// Listar todos os produtos em ordem alfabética pela descricao
+GET http://127.0.0.1:5000/produto
+Content-Type: application/json
+###
+
+// Obter produto pelo ID
+GET http://127.0.0.1:5000/produto/1
+Content-Type: application/json
+
+{ "id": 10,
+  "descricao" : "Tapioca",
+  "unidade"   : "Unid",
+  "quantidade" : 5,
+  "preco_real" : 4.70,
+  "preco_dolar": 0.0
+}
+###
+
+// Deletar produto pelo ID
+DELETE http://127.0.0.1:5000/produto/2
+Content-Type: application/json
+
+{ "id": 10,
+  "descricao" : "Tapioca",
+  "unidade"   : "Unid",
+  "quantidade" : 5,
+  "preco_real" : 4.70,
+  "preco_dolar": 0.0
+}
+###
